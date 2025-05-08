@@ -19,345 +19,381 @@
 
 ---
 - folder: business_rules
-  query: "active=true^sys_scope.scopeSTARTSWITHx_^ORcollectionSTARTSWITHu_^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'active=true^sys_scope.scopeSTARTSWITHx_^ORcollectionSTARTSWITHu_^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   table: sys_script
   key: name
   fields:
-    - extension: js
-      field_name: script
-  subDirPattern: "<collection>/<when>"
+      - extension: js
+        field_name: script
+  subDirPattern: '<collection>/<when>'
+
+- folder: security_rules
+  table: sys_security_acl
+  query: 'active=true^nameSTARTSWITHx_^ORnameSTARTSWITHu_^advanced=true^scriptISNOTEMPTY'
+  key: name
+  fields:
+      - extension: js
+        field_name: script
 
 - folder: script_includes
-  query: "active=true^sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHSCM^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'active=true^sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHSCM^ORnameSTARTSWITH_SCM^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   table: sys_script_include
   key: api_name
   fields:
-    - extension: js
-      field_name: script
+      - extension: js
+        field_name: script
 
 - folder: client_scripts
   table: sys_script_client
-  query: "active=true^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2^sys_scope.scopeSTARTSWITHx_^ORtableSTARTSWITHu_"
+  query: 'active=true^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2^sys_scope.scopeSTARTSWITHx_^ORtableSTARTSWITHu_'
   key: name
   fields:
-    - extension: js
-      field_name: script
-  subDirPattern: "<table>/<type>"
+      - extension: js
+        field_name: script
+  subDirPattern: '<table>/<type>'
 
 - folder: ui_actions
   table: sys_ui_action
-  query: "active=true^sys_scope.scopeSTARTSWITHx_^ORtableSTARTSWITHu_^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'active=true^sys_scope.scopeSTARTSWITHx_^ORtableSTARTSWITHu_^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: name
   fields:
-    - extension: js
-      field_name: script
-  subDirPattern: "<table>/client_<client>"
+      - extension: js
+        field_name: script
+  subDirPattern: '<table>/client_<client>'
 
 - folder: ui_scripts
   table: sys_ui_script
-  query: "active=true^sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHSCM^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'active=true^sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHSCM^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: name
   fields:
-    - extension: js
-      field_name: script
+      - extension: js
+        field_name: script
 
 - folder: fix_scripts
   table: sys_script_fix
-  query: "sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHSCM^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHSCM^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: name
   fields:
-    - extension: js
-      field_name: script
+      - extension: js
+        field_name: script
 
 - folder: sp_widgets
   table: sp_widget
-  query: "sys_scope.scopeSTARTSWITHx_^ORidSTARTSWITHscm^ORsys_scope.nameSTARTSWITHscm^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'sys_scope.scopeSTARTSWITHx_^ORidSTARTSWITHscm^ORsys_scope.nameSTARTSWITHscm^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: id
   fields:
-    - extension: client.js
-      field_name: client_script
-    - extension: server.js
-      field_name: script
-    - extension: html
-      field_name: template
-    - extension: scss
-      field_name: css
+      - extension: client.js
+        field_name: client_script
+      - extension: server.js
+        field_name: script
+      - extension: html
+        field_name: template
+      - extension: scss
+        field_name: css
 
 - folder: sp_header_footer
   table: sp_header_footer
-  query: "sys_scope.scopeSTARTSWITHx_^ORidSTARTSWITHscm^ORsys_scope.nameSTARTSWITHscm^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'sys_scope.scopeSTARTSWITHx_^ORidSTARTSWITHscm^ORsys_scope.nameSTARTSWITHscm^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: name
   fields:
-    - extension: client.js
-      field_name: client_script
-    - extension: demo.js
-      field_name: demo_data
-    - extension: server.js
-      field_name: script
-    - extension: html
-      field_name: template
-    - extension: css
-      field_name: css
+      - extension: client.js
+        field_name: client_script
+      - extension: demo.js
+        field_name: demo_data
+      - extension: server.js
+        field_name: script
+      - extension: html
+        field_name: template
+      - extension: css
+        field_name: css
   subDirPattern: servicenow_<servicenow>
 
 - folder: sp_providers
   table: sp_angular_provider
-  query: "sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHscm^ORnameSTARTSWITHsdx^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHscm^ORnameSTARTSWITHsdx^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: name
   fields:
-    - extension: js
-      field_name: script
-  subDirPattern: "<type>"
+      - extension: js
+        field_name: script
+  subDirPattern: '<type>'
 
 - folder: sp_css
   table: sp_css
-  query: "sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHscm^ORnameSTARTSWITHsdx^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'sys_scope.scopeSTARTSWITHx_^ORnameSTARTSWITHscm^ORnameSTARTSWITHsdx^ORnameSTARTSWITHsales^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: name
   fields:
-    - extension: css
-      field_name: css
+      - extension: css
+        field_name: css
+
+- folder: scripted_rest_resource
+  table: sys_ws_operation
+  query: 'active=true^web_service_definition=0258220d503811108cd34518af501c5a^ORweb_service_definition=51ce0f04803c15108cd3f7e53cd0a0a9^ORweb_service_definition=924a7feecf5f15108cd389f1eae8e1bf^ORweb_service_definition=ec2bb264cff611108cd389f1eae8e12c'
+  key: name
+  fields:
+      - extension: js
+        field_name: operation_script
 
 - folder: sp_ng_templates
   table: sp_ng_template
-  query: "sys_scope.scopeSTARTSWITHx_^ORidSTARTSWITHscm^ORidSTARTSWITHsdx^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+  query: 'sys_scope.scopeSTARTSWITHx_^ORidSTARTSWITHscm^ORidSTARTSWITHsdx^sys_scope!=0a04b3f1dbc4fb007ab5dd3b5e9619a2'
   key: id
   fields:
-    - extension: html
-      field_name: template
-  subDirPattern: "<sp_widget>"
+      - extension: html
+        field_name: template
+  subDirPattern: '<sp_widget>'
 
 - folder: rest_api_configuration_objects
   table: u_rest_api_configuration_object
-  query: ""
+  query: ''
   key: u_number
   fields:
-    - extension: get.js
-      field_name: u_script_get
-    - extension: post.js
-      field_name: u_script_post
-    - extension: put.js
-      field_name: u_script_put
+      - extension: get.js
+        field_name: u_script_get
+      - extension: post.js
+        field_name: u_script_post
+      - extension: put.js
+        field_name: u_script_put
 
 - folder: rest_api_configurations
   table: u_rest_api_configuration
-  query: ""
+  query: ''
   key: u_number
   fields:
-    - extension: get.js
-      field_name: u_script_get
-    - extension: post.js
-      field_name: u_script_post
-    - extension: put.js
-      field_name: u_script_put
+      - extension: get.js
+        field_name: u_script_get
+      - extension: post.js
+        field_name: u_script_post
+      - extension: put.js
+        field_name: u_script_put
 
 - folder: rest_api_configuration_tables
   table: u_rest_api_configuration_table
-  query: ""
+  query: ''
   key: u_number
   fields:
-    - extension: custom_get.js
-      field_name: u_custom_get_script
-    - extension: custom_post.js
-      field_name: u_custom_post_script
-    - extension: custom_put.js
-      field_name: u_custom_put_script
-    - extension: custom_validation.js
-      field_name: u_validation_script
+      - extension: custom_get.js
+        field_name: u_custom_get_script
+      - extension: custom_post.js
+        field_name: u_custom_post_script
+      - extension: custom_put.js
+        field_name: u_custom_put_script
+      - extension: custom_validation.js
+        field_name: u_validation_script
 
 - folder: checkpoint_definitions
   table: u_checkpoint_definition
   query:
-  key: u_stepper_name
+  key: u_name
   fields:
-    - extension: before_checkpoint_start.js
-      field_name: u_script_before_checkpoint_start
-    - extension: after_checkpoint_start.js
-      field_name: u_script_after_checkpoint_start
-    - extension: completion_condition.js
-      field_name: u_completion_condition_script
+      - extension: before_checkpoint_start.js
+        field_name: u_script_before_checkpoint_start
+      - extension: after_checkpoint_start.js
+        field_name: u_script_after_checkpoint_start
+      - extension: completion_condition.js
+        field_name: u_completion_condition_script
 
 - folder: checkpoint_configurations
   table: u_checkpoint_configuration
   query:
   key: u_number
   fields:
-    - extension: condition_script.js
-      field_name: u_condition_script
-    - extension: script_on_start.js
-      field_name: u_script_on_start
-    - extension: script_on_complete.js
-      field_name: u_script_on_complete
+      - extension: condition_script.js
+        field_name: u_condition_script
+      - extension: script_on_start.js
+        field_name: u_script_on_start
+      - extension: script_on_complete.js
+        field_name: u_script_on_complete
 
 - folder: checkpoint_transition_definitions
   table: u_checkpoint_transition_definition
   query:
   key: u_label
   fields:
-    - extension: visibility_conditions.js
-      field_name: u_visibility_conditions_script
-    - extension: prevalidation_automations.js
-      field_name: u_pre_validation_automations
-    - extension: conditions_script.js
-      field_name: u_conditions_script
-    - extension: color_conditions_script.js
-      field_name: u_color_conditions_script
-    - extension: custom_onclick.js
-      field_name: u_custom_onclick_function_script
-    - extension: before_transition.js
-      field_name: u_script_before_transition
-    - extension: after_transition.js
-      field_name: u_script_after_transition
-    - extension: watcher_filter.js
-      field_name: u_watcher_filter
-    - extension: watcher_when_to_fire.js
-      field_name: u_watcher_when_to_fire
+      - extension: visibility_conditions.js
+        field_name: u_visibility_conditions_script
+      - extension: prevalidation_automations.js
+        field_name: u_pre_validation_automations
+      - extension: conditions_script.js
+        field_name: u_conditions_script
+      - extension: color_conditions_script.js
+        field_name: u_color_conditions_script
+      - extension: custom_onclick.js
+        field_name: u_custom_onclick_function_script
+      - extension: before_transition.js
+        field_name: u_script_before_transition
+      - extension: after_transition.js
+        field_name: u_script_after_transition
+      - extension: watcher_filter.js
+        field_name: u_watcher_filter
+      - extension: watcher_when_to_fire.js
+        field_name: u_watcher_when_to_fire
 
 - folder: checkpoint_messages
   table: u_checkpoint_message
   query:
   key: u_number
   fields:
-    - extension: condition_script.js
-      field_name: u_condition_script
-    - extension: message_script.js
-      field_name: u_message_script
-    - extension: watcher_filter.js
-      field_name: u_watcher_filter
-    - extension: watcher_when_to_fire.js
-      field_name: u_watcher_when_to_fire
+      - extension: condition_script.js
+        field_name: u_condition_script
+      - extension: message_script.js
+        field_name: u_message_script
+      - extension: watcher_filter.js
+        field_name: u_watcher_filter
+      - extension: watcher_when_to_fire.js
+        field_name: u_watcher_when_to_fire
 
 - folder: navigation_manager_configurations
   table: u_navigation_manager_configuration
   query:
   key: u_name
   fields:
-    - extension: title.js
-      field_name: u_title
-    - extension: options.js
-      field_name: u_options
-    - extension: before_open.js
-      field_name: u_before_opena
-    - extension: render_conditions.js
-      field_name: u_render_conditions
+      - extension: title.js
+        field_name: u_title
+      - extension: options.js
+        field_name: u_options
+      - extension: before_open.js
+        field_name: u_before_opena
+      - extension: render_conditions.js
+        field_name: u_render_conditions
 
 - folder: notification_config_items
   table: u_notification_config_item
   query:
   key: sys_id
   fields:
-    - extension: label_script.js
-      field_name: u_label_script
-    - extension: content_script.js
-      field_name: u_content_script
+      - extension: label_script.js
+        field_name: u_label_script
+      - extension: content_script.js
+        field_name: u_content_script
 
 - folder: scm_numbers
   table: u_scm_number
   query:
   key: u_number
   fields:
-    - extension: js
-      field_name: u_format_function
+      - extension: js
+        field_name: u_format_function
 
 - folder: verification_definitions
   table: u_scm_verification_definition
   query:
   key: u_number
   fields:
-    - extension: corrective_action.js
-      field_name: u_corrective_action_script
-    - extension: find_ssues.js
-      field_name: u_find_issues_script
-    - extension: finding_script.js
-      field_name: u_finding_script
+      - extension: corrective_action.js
+        field_name: u_corrective_action_script
+      - extension: find_ssues.js
+        field_name: u_find_issues_script
+      - extension: finding_script.js
+        field_name: u_finding_script
 
 - folder: system_notes_configurations
   table: x_am_system_notes_configuration
   query:
   key: sys_id
   fields:
-    - extension: message.js
-      field_name: message
-    - extension: reader_list.js
-      field_name: reader_list
-    - extension: scripted_condition.js
-      field_name: scripted_condition
+      - extension: message.js
+        field_name: message
+      - extension: reader_list.js
+        field_name: reader_list
+      - extension: scripted_condition.js
+        field_name: scripted_condition
 
 - folder: archiving_request_messages
   table: x_ca_archiving_request_state_message
   query:
   key: number
   fields:
-    - extension: condition.js
-      field_name: condition_script
-    - extension: message.js
-      field_name: message_script
+      - extension: condition.js
+        field_name: condition_script
+      - extension: message.js
+        field_name: message_script
 
 - folder: registration_task_messages
   table: x_cr_registration_state_message
   query:
   key: number
   fields:
-    - extension: condition.js
-      field_name: condition_script
-    - extension: message.js
-      field_name: message_script
+      - extension: condition.js
+        field_name: condition_script
+      - extension: message.js
+        field_name: message_script
 
 - folder: data_protection_configurations
   table: x_dpm_data_protection_configuration
   query:
   key: number
   fields:
-    - extension: js
-      field_name: exception
+      - extension: js
+        field_name: exception
 
 - folder: exception_request_task_definition
   table: x_erm_exception_request_task_definition
   query:
   key: number
   fields:
-    - extension: js
-      field_name: completion_condition
+      - extension: js
+        field_name: completion_condition
 
 - folder: exception_request_messages
   table: x_erm_state_message
   query:
   key: number
   fields:
-    - extension: condition.js
-      field_name: condition_script
-    - extension: message.js
-      field_name: message_script
+      - extension: condition.js
+        field_name: condition_script
+      - extension: message.js
+        field_name: message_script
 
 - folder: kafka_exports_definitions
   table: x_kafka_exports_definition
   query:
-  key: kafka_topic_name
+  key: sys_id
   fields:
-    - extension: js
-      field_name: before_script
-  
+      - extension: js
+        field_name: before_script
+
 - folder: kafka_exports_mappings
   table: x_kafka_exports_mapping
   query:
   key: kafka_field_name
   fields:
-    - extension: js
-      field_name: value_script
+      - extension: js
+        field_name: value_script
 
 - folder: lead_management_messages
   table: x_lm_state_message
   query:
   key: number
   fields:
-    - extension: condition.js
-      field_name: condition_script
-    - extension: message.js
-      field_name: message_script
+      - extension: condition.js
+        field_name: condition_script
+      - extension: message.js
+        field_name: message_script
 
 - folder: personas
   table: x_scm_personas_personas
   query:
   key: name
   fields:
-    - extension: js
-      field_name: run_script
+      - extension: js
+        field_name: run_script
+
+- folder: email_notification
+  table: sysevent_email_action
+  query: active=true^sys_scope.scopeSTARTSWITHx_^ORcollectionSTARTSWITHu_
+  key: name
+  fields:
+      - extension: js
+        field_name: advanced_condition
+      - extension: html
+        field_name: message_html
+
+- folder: email_notification_config_item
+  table: u_notification_config_item
+  query: 
+  key: sys_id
+  fields:
+      - extension: js
+        field_name: u_label_script
+      - extension: js
+        field_name: u_content_script
