@@ -397,3 +397,17 @@
         field_name: u_label_script
       - extension: js
         field_name: u_content_script
+
+- folder: navigation_manager_configuration
+  table: u_navigation_manager_configuration
+  query:
+  key: u_name
+  fields:
+    - extension: js
+      field_name: u_title
+    - extension: js
+      field_name: u_options
+    - extension: js
+      field_name: u_before_open
+    - extension: js
+      field_name: u_render_condition
